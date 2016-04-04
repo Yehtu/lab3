@@ -1,0 +1,45 @@
+g++ -o question_A question_A.cpp
+To compile question_A
+
+make
+To compile question_B
+
+result of question_B:
+
+$ ./question_B
+Enter size :
+1000
+sort(): 0 seconds
+v1/v2 are different.
+insertion_sort(): 0.02 seconds
+v1/v2 are the same.
+
+$ ./question_B
+Enter size :
+10000
+sort(): 0 seconds
+v1/v2 are different.
+insertion_sort(): 1.33 seconds
+v1/v2 are the same.
+
+$ ./question_B
+Enter size :
+100000
+sort(): 0.06 seconds
+v1/v2 are different.
+insertion_sort(): 127.89 seconds
+v1/v2 are the same.
+
+$ ./question_B
+Enter size :
+1000000
+sort(): 0.54 seconds
+v1/v2 are different.
+insertion_sort(): 12855.2 seconds
+v1/v2 are the same.
+
+由以上結果,當須排序數值愈多,相差時間也愈多.
+sort()要log(n)次的巢狀呼叫,在同一階層的兩個程式呼叫中,每一階層需要O(n)的時間,所以時間複雜度為O(nlog(n)).
+insertion_sort()最好情況是升序,要n-1次,最壞則是降序要n(n-1)/2次,平均複雜度為O(n^2).
+question_B驗證了兩種排序法時間複雜度O(nlog(n))和O(n^2)的差異.
+
